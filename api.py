@@ -1,4 +1,4 @@
-import httpx
+import httpx, pyperclip
 
 def obfuscate(script):
     url = "https://wearedevs.net/api/obfuscate"
@@ -19,3 +19,6 @@ def response():
     response = obfuscate(script)
     ofuscated = response.json()
     return ofuscated['obfuscated']
+
+def copy(script):
+    pyperclip.copy(script)
